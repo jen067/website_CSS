@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Jen's Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Hero 區域 -->
+    <div id="hero">
+      <img
+        class="horo_image_computer"
+        src="./assets/images/home_hero.PNG"
+        alt="首頁圖片(電腦)"
+      />
+      <img
+        class="hero_image_tablet"
+        src="./assets/images/home_hero_tablet.PNG"
+        alt="首頁圖片(手機/平板)"
+      />
+    </div>
+    <!-- Header 區域 -->
+    <header>
+      <a href="#">Jen's Blog</a>
+      <nav>
+        <a href="./assets/pages/html/profile.html">About Me</a>
+        <a href="./assets/pages/html/work.html">Works</a>
+      </nav>
+    </header>
+
+    <!-- Main 區域 -->
+    <main>
+      <!-- 本月精選照片 -->
+      <section id="monthlyHightlight">
+        <img
+          class="decoration cookie"
+          src="./assets/images/decoration-1.PNG"
+          alt="薑餅人"
+        />
+        <h2>Monthly Highlights</h2>
+        <div class="content">
+          <div class="text">
+            <p>幽靈的旅行 - 小歇一下</p>
+            <p>每次到年底幾乎都睡不到7小時加上來回通勤真的搞得每天都腰酸背痛</p>
+            <p>去年年底畫下了這張圖告誡自己要記得適當的休息方得走得長遠</p>
+          </div>
+          <img src="./assets/images/monthlyHightlight.png" alt="本月精選照片" />
+        </div>
+        <img
+          class="decoration tree"
+          src="./assets/images/decoration-2.PNG"
+          alt="聖誕樹"
+        />
+      </section>
+      <!-- 訂閱 -->
+      <section id="subscribe">
+        <div class="left">
+          <img
+            src="./assets/images/subscribeBg.jpg"
+            alt="訂閱圖片"
+            style="width: 100%"
+          />
+        </div>
+        <div class="right">
+          <h3>訂閱我取得最新的生活日誌</h3>
+          <p>不定期更新，就跟生活中的不確定性一樣</p>
+          <form>
+            <input
+              type="email"
+              id="email"
+              size="30"
+              autocomplete="off"
+              placeholder="example@gmail.com"
+              required
+            />
+            <button>訂閱</button>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <img src="./assets/images/icon.PNG" alt="icon" width="50px" />
+      <p class="paragraph">聯絡我：s111219043@stu,ntue.edu.tw</p>
+    </footer>
+  </body>
+</html>
