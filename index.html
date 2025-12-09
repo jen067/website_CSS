@@ -1,92 +1,158 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Jen's Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200..900&family=Racing+Sans+One&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+
+    <title>Jen's Blog</title>
+
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <!-- Hero 區域 -->
-    <div id="hero">
-      <img
-        class="horo_image_computer"
-        src="./assets/images/home_hero.PNG"
-        alt="首頁圖片(電腦)"
-      />
-      <img
-        class="hero_image_tablet"
-        src="./assets/images/home_hero_tablet.PNG"
-        alt="首頁圖片(手機/平板)"
-      />
-    </div>
-    <!-- Header 區域 -->
+    <!-- Header -->
     <header>
       <a href="#">Jen's Blog</a>
+      <!-- Navbar -->
       <nav>
-        <a href="./assets/pages/html/profile.html">About Me</a>
-        <a href="./assets/pages/html/work.html">Works</a>
+        <a href="#" class="nav-link">Portfolio</a>
+        <a href="#" class="nav-link">Project</a>
+        <a href="#" class="nav-link">Journal</a>
       </nav>
     </header>
-
-    <!-- Main 區域 -->
+    <!-- Hero -->
+    <section id="hero">
+      <h1>Jen's</h1>
+      <h1>Blog</h1>
+    </section>
+    <!-- Main -->
     <main>
-      <!-- 本月精選照片 -->
-      <section id="monthlyHightlight">
-        <img
-          class="decoration cookie"
-          src="./assets/images/decoration-1.PNG"
-          alt="薑餅人"
-        />
-        <h2>Monthly Highlights</h2>
-        <div class="content">
-          <div class="text">
-            <p>幽靈的旅行 - 小歇一下</p>
-            <p>每次到年底幾乎都睡不到7小時加上來回通勤真的搞得每天都腰酸背痛</p>
-            <p>去年年底畫下了這張圖告誡自己要記得適當的休息方得走得長遠</p>
-          </div>
-          <img src="./assets/images/monthlyHightlight.png" alt="本月精選照片" />
-        </div>
-        <img
-          class="decoration tree"
-          src="./assets/images/decoration-2.PNG"
-          alt="聖誕樹"
-        />
+      <!-- Introduction -->
+      <section id="introduction">
+        <p>
+          具備好奇心與衝勁，立志創造簡約、功能性強的數位設計。在不間段的學習中探索全新的知識。<br /><br />想了解更多關於我的內容嗎?點選右邊連結吧!
+        </p>
+        <button>
+          <a href="#"
+            >More about me
+            <img
+              src="./assets/images/Arrow Up Left Contained.svg"
+              alt="圓形箭頭左上圖形"
+          /></a>
+        </button>
       </section>
-      <!-- 訂閱 -->
-      <section id="subscribe">
-        <div class="left">
-          <img
-            src="./assets/images/subscribeBg.jpg"
-            alt="訂閱圖片"
-            style="width: 100%"
-          />
+      <!-- Work -->
+      <section id="work">
+        <div class="title">
+          <h2>Impressive<br />Works</h2>
+          <p>
+            結合設計與程式將數位美學融入每件設計，範圍涵蓋網頁、桌遊、遊戲、插畫...等
+          </p>
         </div>
-        <div class="right">
-          <h3>訂閱我取得最新的生活日誌</h3>
-          <p>不定期更新，就跟生活中的不確定性一樣</p>
-          <form>
+        <div class="cards">
+          <div class="card">
+            <div class="cover"></div>
+            <button>
+              <a href="#"
+                ><img
+                  src="./assets/images/Arrow Up Left Contained(w).svg"
+                  alt="圓形箭頭左上圖形"
+                />作品一</a
+              >
+            </button>
+          </div>
+          <div class="card">
+            <div class="cover"></div>
+            <button>
+              <a href="#"
+                ><img
+                  src="./assets/images/Arrow Up Left Contained(w).svg"
+                  alt="圓形箭頭左上圖形"
+                />作品一</a
+              >
+            </button>
+          </div>
+          <div class="card">
+            <div class="cover"></div>
+            <button>
+              <a href="#"
+                ><img
+                  src="./assets/images/Arrow Up Left Contained(w).svg"
+                  alt="圓形箭頭左上圖形"
+                />作品一</a
+              >
+            </button>
+          </div>
+          <div class="card">
+            <div class="cover"></div>
+            <button>
+              <a href="#"
+                ><img
+                  src="./assets/images/Arrow Up Left Contained(w).svg"
+                  alt="圓形箭頭左上圖形"
+                />作品一</a
+              >
+            </button>
+          </div>
+        </div>
+      </section>
+      <!-- Contact -->
+      <section id="contact">
+        <h2>Contact</h2>
+        <form action="" method="POST">
+          <fieldset>
+            <label for="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              autocomplete="off"
+              placeholder="John Doe"
+              required
+            />
+          </fieldset>
+
+          <fieldset>
+            <label for="email">Email</label>
             <input
               type="email"
               id="email"
-              size="30"
               autocomplete="off"
-              placeholder="example@gmail.com"
+              placeholder="123@gmail.com"
               required
             />
-            <button>訂閱</button>
-          </form>
-        </div>
+          </fieldset>
+
+          <fieldset>
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              placeholder="Enter your message here"
+            ></textarea>
+          </fieldset>
+
+          <button type="submit">Send</button>
+        </form>
       </section>
     </main>
+    <!-- Footer -->
     <footer>
-      <img src="./assets/images/icon.PNG" alt="icon" width="50px" />
-      <p class="paragraph">聯絡我：s111219043@stu,ntue.edu.tw</p>
+      <small>That's all for now.</small>
+      <h2>歡迎透過以下管道聯絡我</h2>
+      <div class="information">
+        <div class="email">
+          <small>Email</small>
+          <p>s111219043@stu.ntue.edu.tw</p>
+        </div>
+        <div class="phone">
+          <small>Phone</small>
+          <p>(+886)0900-000-000</p>
+        </div>
+      </div>
     </footer>
   </body>
 </html>
