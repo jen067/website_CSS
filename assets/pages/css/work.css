@@ -4,799 +4,217 @@
   box-sizing: border-box;
 }
 
-@font-face {
-  font-family: "MyFont";
-  src: url("../../fonts/Multilingual\ Hand.ttf") format("truetype");
-}
-
 body {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #f5f5f5;
-  font-family: "MyFont", "Noto Serif TC", serif;
-  color: #666;
-  font-weight: 700;
-  font-size: 1.25rem;
+  background: #fdfdfd;
+  /* background: linear-gradient(#000 85%, #1469be); */
+  font-family: "Noto Serif TC", "Racing Sans One", serif;
 }
 
 a {
-  position: relative;
   text-decoration: none;
-  color: #666;
+  color: #000;
 }
 
-a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -8.5px;
-  width: 0%;
-  height: 2px;
-  background-color: currentColor;
-  transition: width 0.3s ease;
+button {
+  outline: none;
+  background: none;
+  border: none;
 }
 
-a:hover::after {
+.box {
+  display: none;
+  position: fixed;
   width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
 
+/* Header */
 header {
-  position: absolute;
-  top: 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 80%;
-  max-width: 75rem;
-  font-size: 1.25rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px dashed #666;
+  margin: 0 auto;
+  padding-block: 1.5rem;
+  width: 100%;
+  padding-inline: 5%;
+  font-weight: 500;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  color: #000;
+}
+
+/* Nav */
+.menu {
+  cursor: pointer;
+}
+
+.menu svg {
+  width: 3rem;
 }
 
 nav {
   display: flex;
-  gap: 2rem;
 }
 
+.nav-link {
+  position: relative;
+  display: inline-block;
+  padding: 6px 0;
+  text-decoration: none;
+  transition: transform 0.18s ease, color 0.18s ease;
+  outline: none;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 2px;
+  width: 100%;
+  background: currentColor;
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: #0a84ff;
+  transform: translateY(-2px);
+}
+.nav-link:hover::after,
+.nav-link:focus-visible::after {
+  transform: scaleX(1);
+}
+
+/* Footer */
 footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  margin-top: 1rem;
-  padding-block: 1rem;
-  border-top: 2px solid rgba(86, 71, 52, 0.2);
-  width: 100%;
+  background: linear-gradient(#000 60%, #1469be);
+  color: #fff;
 }
 
-#hero {
-  width: 100%;
-  height: 700px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  padding-block: 1rem;
-  font-family: "Noto Serif TC", serif;
-}
-
-#hero .container {
-  width: 1000px;
-  height: 500px;
-  background-image: url("../../images/work-cover.png");
-  background-size: cover;
-}
-
-main {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 4rem;
-  font-family: "Noto Serif TC", serif;
-  margin-bottom: 6rem;
-}
-
-.design {
+footer .container {
+  width: 90%;
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  width: 80%;
-  margin: auto;
-  max-width: 1000px;
-}
-
-.content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.detail {
-  width: 40%;
-  text-align: right;
-  font-size: 1rem;
-}
-
-.detail span {
-  text-decoration: underline;
-}
-
-iframe {
-  width: 560px;
-  height: 315px;
-}
-
-.rhino,
-.cloth,
-.character,
-.laser {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-bottom: 4rem;
-}
-
-.postcard,
-.calander {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  margin-bottom: 2rem;
-}
-
-.rhino h3,
-.cloth h3,
-.postcard h3,
-.character h3,
-.calander h3,
-.spirit-trace h3,
-.graphic h3,
-.website h3,
-.laser h3 {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 1.25rem;
-}
-
-.rhino .images {
-  display: flex;
-  gap: 3rem;
-}
-
-.rhino .images > img,
-.cloth .images > img {
-  width: 400px;
-}
-
-.rhino .set {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.rhino .upper {
-  width: 300px;
-  height: 200px;
-}
-
-.rhino .upper img {
-  width: 100%;
-}
-
-.rhino .lower {
-  width: 300px;
-  height: 84px;
-  background: #5c8bc9;
-}
-
-.rhino small,
-.cloth small {
-  align-self: flex-end;
-  font-size: 1rem;
-}
-
-.cloth .images {
-  display: flex;
-  gap: 3rem;
-  justify-content: center;
-  margin-top: 2rem;
-}
-
-.postcard .images {
-  display: flex;
-  gap: 3rem;
-}
-
-.postcard .images img,
-.calander .images img {
-  width: 100%;
-}
-
-.postcard h1 {
-  writing-mode: vertical-rl;
-}
-
-.character .image {
-  display: flex;
-  gap: 3rem;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.character p {
-  font-size: 1rem;
-}
-
-.calander .images.top {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.calander .images.top div:nth-child(1) {
-  flex: 1;
-  max-width: 550px;
-  height: 425px;
-}
-
-.calander .images.top div:nth-child(1) img {
-  height: 100%;
-}
-
-.calander .images.top div:nth-child(2) {
-  width: 300px;
-}
-
-.colorPalete {
-  width: 10px;
-  height: 425px;
-  background: linear-gradient(#f7e8de, #89c5d2);
-}
-
-.calander .detail {
-  width: 100%;
   margin: 0 auto;
-  text-align: center;
+  padding-block: 3rem;
+  padding-bottom: 6rem;
 }
 
-.calander .images.bottom {
-  width: 1000px;
-  display: grid;
-  justify-items: center;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(1, 1fr);
+footer h2 {
+  font-size: 1.5rem;
 }
 
-.calander .images.bottom div {
-  width: 200px;
-}
-
-.calander .images.bottom div img {
-  width: 100%;
-}
-
-.calander .images.bottom div:nth-child(2),
-.calander .images.bottom div:nth-child(4) {
-  position: relative;
-  top: 5rem;
-}
-
-.spirit-trace {
+footer .information {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-bottom: 4rem;
+  gap: 6rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+  padding-bottom: 1.5rem;
 }
 
-.spirit-trace .detail,
-.room .detail,
-.shooting .detail,
-.website .detail,
-.laser .detail {
-  width: 60%;
-  text-align: center;
-  margin: auto;
+footer .information p {
+  letter-spacing: 0.1rem;
 }
 
-.spirit-trace .subtitle {
-  align-self: center;
-}
-
-.spirit-trace .soundtracks {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  gap: 1rem;
-  font-size: 1rem;
-}
-
-.spirit-trace .track {
-  display: flex;
-  gap: 1rem;
-}
-
-.spirit-trace .track h3 {
-  min-width: 250px;
-}
-
-.room,
-.shooting,
-.website {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 2rem;
-  margin-bottom: 4rem;
-}
-
-.website a {
-  display: block;
-  text-align: center;
-}
-
-.laser .images {
-  display: flex;
-  gap: 3rem;
-  align-items: center;
-  justify-content: center;
-}
-
-.laser .images img {
-  width: 280px;
-}
-
-.laser .images.cards {
-  margin-bottom: 100px;
-}
-
-.laser .images.cards img:nth-child(2),
-.laser .images.cards img:nth-child(4) {
-  position: relative;
-  top: 140px;
-}
-
-.weblink {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-}
-
-.weblink a {
-  width: 80px !important;
+footer small {
+  font-size: 0.9rem;
+  font-weight: 600;
+  opacity: 0.9;
 }
 
 /* 手機 */
 @media screen and (min-width: 320px) {
-  #hero {
-    height: 500px;
-  }
-  #hero .container {
-    width: 320px;
-    height: 160px;
-  }
-
-  #hero p {
-    font-size: 1rem;
-  }
-
   header {
-    font-size: 1rem;
+    font-size: 0.95rem;
+    z-index: 100;
   }
 
-  .character .image {
-    flex-direction: column;
-  }
-
-  .character .image img {
-    width: 320px;
+  .menu {
+    display: block;
   }
 
   nav {
-    gap: 1rem;
-  }
-
-  .postcard .images {
+    display: flex;
     flex-direction: column;
-    align-items: center;
-  }
-
-  .postcard .images div {
-    width: 300px;
-  }
-
-  .postcard h1 {
-    writing-mode: horizontal-tb;
-  }
-
-  .content {
-    flex-direction: column;
-    gap: 1rem;
-    justify-content: flex-start;
-    align-items: flex-start;
+    position: absolute;
+    left: 0;
     width: 100%;
-  }
-
-  .detail {
-    font-size: 0.75rem;
-    text-align: left;
-    width: 100%;
-  }
-
-  .cloth .images img {
-    width: 300px;
-  }
-
-  .cloth .images {
-    flex-direction: column;
-    gap: 2rem;
-    align-items: center;
-    margin-top: 2rem;
-  }
-
-  .cloth .images small,
-  .rhino .images small {
-    align-self: center;
-    text-align: center;
-  }
-
-  .rhino .images {
-    flex-direction: column;
-    align-items: center;
     gap: 1rem;
+    z-index: -1;
+    background: #fff;
+    color: #000;
+    padding: 1rem 10%;
+
+    opacity: 0;
+    transform: translateY(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
   }
 
-  .rhino .images > img {
-    width: 300px;
+  nav.active {
+    z-index: 1;
+    opacity: 1;
+    transform: translateY(150px);
   }
 
-  .calander .images.top {
+  footer .information {
     flex-direction: column;
-    align-items: center;
     gap: 1rem;
-  }
-
-  .calander .images.top div:nth-child(1) {
-    width: 300px;
-  }
-
-  .calander .images.top div:nth-child(2) {
-    width: 300px;
-  }
-
-  .colorPalete {
-    width: 300px;
-    height: 10px;
-    background: linear-gradient(90deg, #f7e8de, #89c5d2);
-  }
-
-  .calander .detail {
-    width: 90%;
-  }
-
-  .calander .images.bottom {
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    gap: 1rem;
-    width: 300px;
-  }
-
-  .calander .images.bottom div:nth-child(2),
-  .calander .images.bottom div:nth-child(4) {
-    position: static;
-  }
-
-  footer p {
-    font-size: 1rem;
-  }
-
-  iframe {
-    width: 300px;
-    height: 250px;
-  }
-
-  .spirit-trace .detail,
-  .room .detail,
-  .shooting .detail,
-  .website .detail {
-    width: 90%;
-  }
-
-  .spirit-trace .track {
-    flex-direction: column;
-  }
-
-  .website a {
-    font-size: 1rem;
-  }
-
-  .laser .images {
-    flex-direction: column;
-  }
-
-  .laser .detail {
-    width: 100%;
-  }
-
-  .laser .images.cards {
-    margin: 0;
-    gap: 0;
-  }
-
-  .laser .images.cards img:nth-child(2),
-  .laser .images.cards img:nth-child(4) {
-    top: 0;
   }
 }
 
 /* 平板 */
 @media screen and (min-width: 768px) {
   header {
-    font-size: 1.25rem;
+    font-size: 1rem;
   }
 
   nav {
     gap: 2rem;
   }
 
-  #hero {
-    height: 600px;
-  }
-
-  #hero .container {
-    width: 600px;
-    height: 300px;
-  }
-
-  #hero p {
-    font-size: 1.25rem;
-  }
-
-  .character .image {
+  footer .information {
     flex-direction: row;
+    gap: 6rem;
+  }
+}
+
+/* 平板(橫) */
+@media screen and (min-width: 1024px) {
+  .box {
+    display: none;
   }
 
-  .character .image img {
-    width: 400px;
+  .menu {
+    display: none;
   }
 
-  .detail {
-    font-size: 1rem;
-  }
-
-  .cloth .images img {
-    width: 450px;
-  }
-
-  .rhino .images > img {
-    width: 450px;
-  }
-
-  .rhino .upper {
-    width: 450px;
-    height: 300px;
-  }
-
-  .rhino .lower {
-    width: 450px;
-    height: 84px;
-    background: #5c8bc9;
-  }
-
-  .calander .images.top div:nth-child(1) {
-    width: 450px;
-  }
-
-  .calander .images.top div:nth-child(2) {
-    width: 450px;
-  }
-
-  .colorPalete {
-    width: 450px;
-    height: 10px;
-    background: linear-gradient(90deg, #f7e8de, #89c5d2);
-  }
-
-  .calander .detail {
-    width: 75%;
-  }
-
-  .calander .images.bottom {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    width: 600px;
-  }
-
-  iframe {
-    width: 560px;
-    height: 315px;
-  }
-
-  .spirit-trace .detail,
-  .room .detail,
-  .shooting .detail,
-  .website .detail {
-    width: 75%;
-  }
-
-  .spirit-trace .track {
+  nav {
+    display: flex;
     flex-direction: row;
-  }
-
-  .website a {
-    font-size: 1.25rem;
-  }
-
-  .laser .images img {
-    width: 400px;
-  }
-
-  .laser .detail {
-    width: 80%;
+    position: static;
+    width: auto;
+    z-index: 0;
+    background: none;
+    box-sizing: border-box;
+    transform: translate(0, 0);
+    padding: 0;
+    opacity: 1;
   }
 }
 
 /* 電腦 */
-@media screen and (min-width: 1023px) {
-  #hero {
-    height: 700px;
+@media screen and (min-width: 1440px) {
+  header {
+    border-bottom-left-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
   }
-  #hero .container {
-    width: 800px;
-    height: 400px;
-  }
-
-  .postcard .images {
-    flex-direction: row;
-  }
-
-  .postcard .images div:nth-child(1) {
-    width: 350px;
-  }
-
-  .postcard .images div:nth-child(2) {
-    width: 280px;
-  }
-
-  .postcard .images div:nth-child(3) {
-    width: 200px;
-  }
-
-  .postcard h1 {
-    writing-mode: vertical-rl;
-  }
-
-  .content {
-    flex-direction: row;
-    gap: 0;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-  }
-
-  .detail {
-    font-size: 1rem;
-    text-align: right;
-    width: 40%;
-  }
-
-  .cloth .images {
-    flex-direction: row;
-    gap: 3rem;
-    justify-content: center;
-    margin-top: 2rem;
-  }
-
-  .cloth .images small {
-    align-self: flex-end;
-    text-align: right;
-  }
-
-  .calander .images.top {
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 1rem;
-  }
-
-  .calander .images.top div:nth-child(1) {
-    flex: 1;
-    max-width: 550px;
-    height: 425px;
-  }
-
-  .calander .images.top div:nth-child(1) img {
-    height: 100%;
-  }
-
-  .calander .images.top div:nth-child(2) {
-    width: 300px;
-  }
-
-  .colorPalete {
-    width: 10px;
-    height: 425px;
-    background: linear-gradient(#f7e8de, #89c5d2);
-  }
-
-  .calander .detail {
-    width: 100%;
-  }
-
-  .calander .images.bottom {
-    width: 750px;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(1, 1fr);
-  }
-
-  .spirit-trace .detail,
-  .room .detail,
-  .shooting .detail,
-  .website .detail {
-    width: 60%;
-  }
-
-  .laser .detail {
-    width: 60%;
-  }
-
-  .laser .images {
-    flex-direction: row;
-  }
-
-  .laser .images img {
-    width: 280px;
-  }
-
-  .laser .images.cards {
-    margin-bottom: 100px;
-  }
-
-  .laser .images.cards img {
-    width: 250px;
-  }
-
-  .laser .images.cards img:nth-child(2),
-  .laser .images.cards img:nth-child(4) {
-    top: 140px;
-  }
-}
-
-@media screen and (min-width: 1439px) {
-  .rhino .images {
-    flex-direction: row;
-    align-items: center;
-    gap: 3rem;
-  }
-
-  .rhino .images > img {
-    width: 400px;
-  }
-  .rhino .upper {
-    width: 300px;
-    height: 200px;
-  }
-
-  .rhino .lower {
-    width: 300px;
-    height: 84px;
-  }
-
-  .rhino .images small {
-    align-self: flex-end;
-    text-align: right;
-  }
-
-  .calander .images.bottom {
-    width: 1000px;
-  }
-
-  .laser .images.cards img {
-    width: 280px;
+  header {
+    max-width: 70rem;
   }
 }
