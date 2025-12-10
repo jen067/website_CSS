@@ -193,6 +193,17 @@ main section .detail p {
   line-height: 1.5;
 }
 
+/* GenType */
+#GenType .project {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+#GenType .images {
+  align-self: center;
+}
+
 /* Suno */
 #Suno {
   padding-bottom: 4rem;
@@ -362,7 +373,8 @@ footer small {
   #Calander .project,
   #BoardGame .project,
   #Graphic .project,
-  #Baseball .project {
+  #Baseball .project,
+  #GenType .project {
     align-items: center;
   }
 
@@ -381,7 +393,8 @@ footer small {
   #Calander .project .detail,
   #BoardGame .project .detail,
   #Graphic .project .detail,
-  #Baseball .project .detail {
+  #Baseball .project .detail,
+  #GenType .project .detail {
     max-width: 17rem;
   }
 
@@ -420,7 +433,8 @@ footer small {
     width: 17rem;
   }
 
-  #Calander img {
+  #Calander img,
+  #GenType img {
     width: 280px;
   }
 
@@ -467,7 +481,8 @@ footer small {
   #Calander .project,
   #BoardGame .project,
   #Graphic .project,
-  #Baseball .project {
+  #Baseball .project,
+  #GenType .project {
     align-items: flex-start;
   }
 
@@ -485,7 +500,8 @@ footer small {
   #Calander .project .detail,
   #BoardGame .project .detail,
   #Graphic .project .detail,
-  #Baseball .project .detail {
+  #Baseball .project .detail,
+  #GenType .project .detail {
     max-width: none;
   }
 
@@ -524,7 +540,8 @@ footer small {
     justify-content: space-between;
   }
 
-  #Calander img {
+  #Calander img,
+  #GenType img {
     width: 500px;
   }
 
@@ -583,7 +600,8 @@ footer small {
     flex-wrap: nowrap;
   }
 
-  #Calander img {
+  #Calander img,
+  #GenType img {
     width: 750px;
   }
 
