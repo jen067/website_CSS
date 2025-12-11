@@ -124,6 +124,11 @@ header {
   min-height: 80vh;
   position: relative;
   overflow: hidden;
+  background: radial-gradient(
+    circle,
+    rgba(20, 105, 190, 1) 0%,
+    rgba(0, 0, 0, 1) 50%
+  );
 }
 
 #hero h1 {
@@ -222,6 +227,25 @@ header {
   height: 18.75rem;
   background: #cfcfcf;
   border-radius: 2rem;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+}
+
+#work .card:nth-child(1) .cover {
+  background-image: url("./assets/images/imageGenerate1.jpg");
+}
+
+#work .card:nth-child(2) .cover {
+  background-image: url("./assets/images/calendar-1.jpg");
+}
+
+#work .card:nth-child(3) .cover {
+  background-image: url("./assets/images/card1-mockup.jpg");
+}
+
+#work .card:nth-child(4) .cover {
+  background-image: url("./assets/images/baseball.png");
 }
 
 #work .cards button a {

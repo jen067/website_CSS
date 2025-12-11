@@ -274,6 +274,7 @@ nav {
 #experience .cards {
   padding-bottom: 3rem;
   border-bottom: 1px solid #000;
+  width: 100%;
 }
 
 #experience .card {
@@ -283,6 +284,7 @@ nav {
   cursor: pointer;
   transition: transform 0.25s ease, box-shadow 0.25s ease,
     background-color 0.25s ease, border-color 0.25s ease;
+  width: 100%;
 }
 
 #experience .card:hover {
